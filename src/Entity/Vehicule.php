@@ -56,6 +56,11 @@ class Vehicule
      */
     private $prixAchat;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Location", inversedBy="Vehicule")
+     */
+    private $Id;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -153,6 +158,13 @@ class Vehicule
     public function setPrixAchat(int $prixAchat): self
     {
         $this->prixAchat = $prixAchat;
+
+        return $this;
+    }
+
+    public function setId(?Location $Id): self
+    {
+        $this->Id = $Id;
 
         return $this;
     }
