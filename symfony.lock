@@ -248,6 +248,9 @@
     "symfony/var-dumper": {
         "version": "v4.1.1"
     },
+    "symfony/var-exporter": {
+        "version": "v4.2.2"
+    },
     "symfony/web-profiler-bundle": {
         "version": "3.3",
         "recipe": {
