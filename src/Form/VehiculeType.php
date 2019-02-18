@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class VehiculeType extends AbstractType
 {
@@ -21,6 +22,14 @@ class VehiculeType extends AbstractType
             ->add('nbKm')
             ->add('dateAchat')
             ->add('prixAchat')
+            ->add('image', FileType::class, [
+                'multiple' => true,
+                'attr'     => [
+                    'accept' => 'image/*',
+                    'multiple' => 'multiple'
+                ]
+            ])
+        
             ->add('submit', SubmitType::class) //Submit Button
         ;
     }
