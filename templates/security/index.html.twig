@@ -3,21 +3,38 @@
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div>
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-
+    </br>
+    <h1 align="center"><span class="badge badge-info" style="font-family:'Centuty'">Lib 2 Move</span></h1>
+    
+    
+    <div class="form-group">
+    <a href="/login"<button ><h5>< Connexion </h5></button></a>
+        <h3 align="center">INSCRIPTION</h3>
+    
         {{ form_start(form) }}
-        {{ form_row(form.Nom) }}
-        {{ form_row(form.Prenom) }}
-        {{ form_row(form.Email) }}
-       
-        
+        {{ form_row(form.nom) }}
+        {{ form_row(form.prenom) }}
+
+        {{ form_row(form.email) }}
+        {{ form_row(form.password) }}
+        <hr>
+
+        Date de Naissance
+        {{ form_row(form.birthday) }}
+        {{ form_row(form.adresse) }}
+        {{ form_row(form.telephone) }}
+        </br>
         {{ form_end(form) }}
+    </div>
+
+    <style>
+        h1 { margin-top:1%;}
+        .form-group {width:500px; margin: 5% auto; }
+        .form-group input {border-radius:0px; }
+        .form-group h3 {margin-bottom:2%;}
+        .form-group h5 {margin-bottom:5%;}
+        .form-group label {visibility:hidden;}
+    </style>
+
 </div>
 {% endblock %}

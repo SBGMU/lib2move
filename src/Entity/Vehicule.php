@@ -18,7 +18,7 @@ class Vehicule
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      */
     private $numSerie;
 
@@ -72,12 +72,12 @@ class Vehicule
         return $this->id;
     }
 
-    public function getNumSerie(): ?int
+    public function getNumSerie(): ?string
     {
         return $this->numSerie;
     }
 
-    public function setNumSerie(int $numSerie): self
+    public function setNumSerie(string $numSerie): self
     {
         $this->numSerie = $numSerie;
 

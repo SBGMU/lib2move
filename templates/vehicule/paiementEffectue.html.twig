@@ -1,0 +1,39 @@
+{% include 'base.html.twig' %}
+{% include 'header.html.twig' %}
+
+<div class="jumbotron">
+    <h2 class="display-4">Votre paiement a été éffectué avec succès !</h2>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="6">DETAILS DE LA LOCATION</th>
+        </tr>
+        <tr>
+            <th scope="col">Compte Bénéficiaire</th>
+            <th scope="col">Numero de Serie</th>
+            <th scope="col">Marque</th>
+            <th scope="col">Modele</th>
+            <th scope="col">Prix</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td scope="row">Prenom Nom</td>
+            <td>54D6F4DFD454DFC4</td>
+            <td>TOYOTA</td>
+            <td>PRIUS</td>
+            <td>12 599 €</td>
+            <td rowspan="2">
+                <a href="/.gitignore" class="btn btn-success" download="fichier_test">Télécharger le recapitulatif</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p class="lead"><i>Toute l'équipe Lib2Move vous remercie d'avoir utilisé nos services.</i></p>
+</div>
+
+<style>
+    .jumbotron { width:70%; margin: 2% auto;}
+    table{ margin:5% auto ;}
+</style>

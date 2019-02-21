@@ -7,21 +7,55 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class RegisterUserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Nom')
-            ->add('Prenom')
+            ->add('nom', null, [
+                'attr' => [
+                'placeholder' => 'Nom', 
+                'class' => 'form-control',
+                ]
+            ])
+            ->add('prenom', null, [
+                'attr' => [
+                'placeholder' => 'Prenom', 
+                'class' => 'form-control',
+                ]
+            ])
             ->add('birthday')
-           
-            ->add('password')
-            ->add('Telephone')
-            ->add('Adresse')
-            ->add('Email')
-            ->add('submit', SubmitType::class)
+            ->add('password', null, [
+                'attr' => [
+                'placeholder' => 'Mot de Passe', 
+                'class' => 'form-control',
+                ]
+            ])
+            ->add('telephone', null, [
+                'attr' => [
+                'placeholder' => 'Telephone', 
+                'class' => 'form-control',
+                ]
+            ])
+            ->add('adresse', null, [
+                'attr' => [
+                'placeholder' => 'Adresse', 
+                'class' => 'form-control',
+                ]
+            ])
+            ->add('email', null, [
+                'attr' => [
+                'placeholder' => 'Email', 
+                'class' => 'form-control',
+                ]
+            ])
+            ->add('S\'inscrire', SubmitType::class, [
+                'attr' => [
+                'class' => 'btn btn-dark btn-lg btn-block ',
+                ]
+            ])
         ;
     }
 

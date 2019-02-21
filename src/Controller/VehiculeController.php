@@ -35,7 +35,7 @@ class VehiculeController extends Controller
             'form' => $form->createView(),
             'vehicule' => $vehicule,
         ));
-
+        
         
     }
 
@@ -52,8 +52,24 @@ class VehiculeController extends Controller
         $vehicule = $vehiculeRepository->findAll();
 
         return $this->render('vehicule/listeVehicule.html.twig', array(
-            'vehicule' => $vehicule,
+            'vehicule' => 'vehicule',
         ));
+
+        
+    }
+
+    /**
+     * @Route("/paiementEffectue", name="paiementEffectue")
+     */
+
+    public function paiementEffectue(Request $request, VehiculeRepository $vehiculeRepository)
+    {
+
+        return $this->render('vehicule/paiementEffectue.html.twig', array(
+            'vehicule' => 'vehicule',
+        ));
+
+        
 
         
     }
