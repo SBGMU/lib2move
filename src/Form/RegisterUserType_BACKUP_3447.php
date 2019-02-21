@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Form;
-
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
@@ -11,11 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-<<<<<<< HEAD
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-=======
->>>>>>> refs/remotes/origin/master
-
 class RegisterUserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -34,22 +28,17 @@ class RegisterUserType extends AbstractType
                 ]
             ])
             ->add('birthday')
-<<<<<<< HEAD
             ->add('password', null, [
                 'attr' => [
                 'placeholder' => 'Mot de Passe', 
                 'class' => 'form-control',
                 ]
             ])
-=======
-           
->>>>>>> refs/remotes/origin/master
             ->add('password', RepeatedType:: class, array(
                 'type' => PasswordType:: class,
                 'first_options' => array('label' => 'Password'),
                 'second_options' => array('label' => 'Repeat Password'),
-<<<<<<< HEAD
-             ))
+            ))
             ->add('telephone', null, [
                 'attr' => [
                 'placeholder' => 'Telephone', 
@@ -73,13 +62,6 @@ class RegisterUserType extends AbstractType
                 'class' => 'btn btn-dark btn-lg btn-block ',
                 ]
             ])
-=======
-                ))
-            ->add('Telephone')
-            ->add('Adresse')
-            ->add('Email')
-            ->add('submit', SubmitType::class)
->>>>>>> refs/remotes/origin/master
         ;
     }
 
