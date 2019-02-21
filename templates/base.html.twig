@@ -9,4 +9,21 @@
 
     {% block body %} {% endblock %}
     {% block javascripts %}{% endblock %}
+        
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+       
+    
+
+{% if is_granted('ROLE_ADMIN') %}
+    <p>Username: {{ app.user.username }}</p>
+{% elseif is_granted('ROLE_USER') %}
+    <p>Username: {{ app.user.username }}</p>
+    <p>point: {{ app.user.pointFidelite }}</p>
+{% else %}
+    Anonymous
+{% endif %}
+
+    </body>
 </html>
