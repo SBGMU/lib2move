@@ -64,8 +64,24 @@ class Vehicule
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\File(mimeTypes={ "image/png", "image/jpeg" })
      */
     private $Image;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $Status;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $type;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $prixLocation;
 
     public function getId(): ?int
     {
@@ -175,14 +191,50 @@ class Vehicule
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getImage()
     {
         return $this->Image;
     }
 
-    public function setImage(string $Image): self
+    public function setImage($Image)
     {
         $this->Image = $Image;
+
+        return $this;
+    }
+
+    public function getStatus(): ?bool
+    {
+        return $this->Status;
+    }
+
+    public function setStatus(bool $Status): self
+    {
+        $this->Status = $Status;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getPrixLocation(): ?int
+    {
+        return $this->prixLocation;
+    }
+
+    public function setPrixLocation(int $prixLocation): self
+    {
+        $this->prixLocation = $prixLocation;
 
         return $this;
     }

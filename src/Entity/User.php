@@ -74,7 +74,12 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Email;
+    private $email;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $PointFidelite;
 
     public function __construct()
     {
@@ -259,12 +264,24 @@ class User implements UserInterface
 
     public function getEmail(): ?string
     {
-        return $this->Email;
+        return $this->email;
     }
 
-    public function setEmail(string $Email): self
+    public function setEmail(string $email): self
     {
-        $this->Email = $Email;
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getPointFidelite(): ?int
+    {
+        return $this->PointFidelite;
+    }
+
+    public function setPointFidelite(int $PointFidelite): self
+    {
+        $this->PointFidelite = $PointFidelite;
 
         return $this;
     }
