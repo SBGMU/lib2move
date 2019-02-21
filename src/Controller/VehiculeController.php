@@ -97,16 +97,4 @@ class VehiculeController extends Controller
 
         
     }
-    /**
-     * @Route("/DetailVehicule/{id}", name="DetailVehicule" , methods={"GET"})
-     */
-    public function DetailVehicule( Vehicule $vehicule):Reponse
-    {
-        
-        return $this->render('vehicule/Detail.html.twig', array(
-            'vehicule' => $vehicule,
-        ));
-
-        
-    }
 }
