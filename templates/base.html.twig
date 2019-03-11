@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+        
     {% block head %}
         <meta charset="UTF-8">
         <title>{% block title %}Lib 2 Move {% endblock %}</title>
@@ -8,7 +9,7 @@
     {% endblock %}
 
     {% block body %} {% endblock %}
-    {% block javascripts %}{% endblock %}
+    
         
         {% block stylesheets %}{% endblock %}
     </head>
@@ -19,10 +20,12 @@
     <p>Username: {{ app.user.username }}</p>
 {% elseif is_granted('ROLE_USER') %}
     <p>Username: {{ app.user.username }}</p>
-    <p>point: {{ app.user.pointFidelite }}</p>
+    <p id="point">{{ app.user.pointFidelite }}</p>
 {% else %}
     Anonymous
 {% endif %}
 
     </body>
+
+
 </html>

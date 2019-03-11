@@ -2,7 +2,8 @@
 {% include 'header.html.twig' %}
 
 {% block body %}
-<<<<<<< HEAD
+
+
     <div class="container-fluid">
         <div class="float-left shadow-sm p-3 mb-5 bg-white rounded border border-dark statut_page">
             <h3>Nos véhicules</h3>
@@ -11,34 +12,22 @@
 
     <fieldset>
         {% for element in vehicule %}
+          <img src="{{ asset('uploads/' ~ element.image) }}" />
             <h1>{{ element.marque }}</h1>
             <h3>{{ element.modele }}</h3>
             <p><i>Couleur </i>{{ element.couleur }}</p>
             <input type="button" value="reserver">
-            <a href="">detail</a> 
+            <a href="{{ path('DetailVehicule', {'id': element.id}) }}">detail</a> 
         {% endfor %}
     </fieldset>
 
-    <style>
-        .statut_page {margin:2% 2% 2%; background:lightgrey;padding:10px 100px; width:600px;}
-        fieldset { border:3px solid #4949ff; display:inline-block; width:30%; margin:10% auto;}
-    </style>
-=======
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    
+
 
    
 
-<fieldset>
-    {% for element in vehicule %}
-        <h1>{{ element.marque }}</h1>
-        <h3>{{ element.modele }}</h3>
-        <p><i>Couleur </i>{{ element.couleur }}</p>
-        <input type="button" value="reserver">
-         <a href="">detail</a> 
-    {% endfor %}
-</fieldset>
->>>>>>> refs/remotes/origin/master
+
+
+
+>>>>>>
 {% endblock %}

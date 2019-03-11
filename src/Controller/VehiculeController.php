@@ -11,12 +11,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 
 
 class VehiculeController extends Controller
 {
-    /**
+       /**
      * @Route("/vehicule", name="vehicule")
      */
     public function index(Request $request, VehiculeRepository $vehiculeRepository)
@@ -30,6 +31,8 @@ class VehiculeController extends Controller
             $fileName = md5(uniqid()).'.'.$file->guessExtension();
             $file->move($this->getParameter('upload_directory'),$fileName);
             $vehicule->setImage($fileName);
+            $vehicule->setStatus(1);
+           /// $vehicule->setImage($fileName);
             /*
             $message = (new \Swift_Message('You Got Mail!'))
                          ->setFrom($contactFormData['from'])
@@ -50,10 +53,9 @@ class VehiculeController extends Controller
             'form' => $form->createView(),
             'vehicule' => $vehicule,
         ));
-        
+
         
     }
-
      /**
      * @Route("/listeVehicule", name="listeVehicule")
      */
@@ -64,10 +66,9 @@ class VehiculeController extends Controller
         $form =  $this->createForm(VehiculeType::class, $vehicule);
         $form->handleRequest($request);
 
-        $vehicule = $vehiculeRepository->findBy(array('Status' => '1'));
-
+        $vehicule = $vehiculeRepository->findAll();
         return $this->render('vehicule/listeVehicule.html.twig', array(
-            'vehicule' => 'vehicule',
+            'vehicule' => $vehicule,
         ));
 
         
@@ -86,15 +87,22 @@ class VehiculeController extends Controller
 
     } 
     /**
-     * @Route("/DetailVehicule/{id}", name="DetailVehicule" , methods={"GET"})
+     * @Route("/DetailVehicule/{id}", name="DetailVehicule")
+     * @ParamConverter("vehicule", options={"mapping"={"id"="id"}})
      */
-    public function DetailVehicule( Vehicule $vehicule):Reponse
+    public function DetailVehicule( $id)
     {
         
-        return $this->render('vehicule/Detail.html.twig', array(
-            'vehicule' => $vehicule,
-        ));
+        $vehicule = $this->getDoctrine()->getRepository(Vehicule::class)->find($id);     
+        
+        if (!$vehicule) {
+            throw $this->createNotFoundException('No video found for id '.$id);
+        }
+        return $this->render('vehicule/Detail.html.twig', [
 
+            'vehicule' => $vehicule,
+    
+        ]);
         
     }
 }

@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class VehiculeType extends AbstractType
 {
@@ -48,8 +49,7 @@ class VehiculeType extends AbstractType
                 'attr' => [
                 'placeholder' => 'Kilométrage', 
                 'class' => 'form-control',
-                'step' => '5000',
-                'min' => '0',
+                
                 ]
             ])
             ->add('dateAchat', null, [
@@ -61,19 +61,26 @@ class VehiculeType extends AbstractType
                 'attr' => [
                 'placeholder' => 'Prix d\'achat', 
                 'class' => 'form-control',
-                'step' => '5000',
-                'min' => '0',
+                
                 ]
             ])
-            ->add('image', FileType::class, [
-                'multiple' => true,
-                'attr'     => [
-                    'accept' => 'image/*',
-                    'multiple' => 'multiple', 
-                    'class' => 'form-control-file',
-                ]
-            ])
-        
+            ->add('type',  ChoiceType::class, [
+                'choices'  => [
+                    'Voiture' => 'Voiture',
+                    'Moto' => 'Moto',
+                ],])
+            ->add('image', FileType::class, array( 
+                'label' => 'choisir votre images',
+            ))
+            
+            
+                    ->add('prixLocation', null, [
+                        'attr' => [
+                        'placeholder' => 'Prix location', 
+                        'class' => 'form-control',
+                        
+                        ]
+                    ])
             ->add('Enregistrer', SubmitType::class, [
                 'attr' => [
                 'class' => 'btn btn-success btn-lg btn-block',

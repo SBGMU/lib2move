@@ -43,6 +43,21 @@ class Location
      */
     private $Vehicule;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $VilleDarriver;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $VilleDepart;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $PrixTotal;
+
     public function __construct()
     {
         $this->Vehicule = new ArrayCollection();
@@ -128,6 +143,42 @@ class Location
                 $vehicule->setId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getVilleDarriver(): ?string
+    {
+        return $this->VilleDarriver;
+    }
+
+    public function setVilleDarriver(string $VilleDarriver): self
+    {
+        $this->VilleDarriver = $VilleDarriver;
+
+        return $this;
+    }
+
+    public function getVilleDepart(): ?string
+    {
+        return $this->VilleDepart;
+    }
+
+    public function setVilleDepart(string $VilleDepart): self
+    {
+        $this->VilleDepart = $VilleDepart;
+
+        return $this;
+    }
+
+    public function getPrixTotal(): ?string
+    {
+        return $this->PrixTotal;
+    }
+
+    public function setPrixTotal(string $PrixTotal): self
+    {
+        $this->PrixTotal = $PrixTotal;
 
         return $this;
     }

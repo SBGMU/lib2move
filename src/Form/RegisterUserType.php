@@ -60,11 +60,13 @@ class RegisterUserType extends AbstractType
                 'class' => 'form-control',
                 ]
             ])
+            ->add('PointFidelite')
             ->add('S\'inscrire', SubmitType::class, [
                 'attr' => [
                 'class' => 'btn btn-dark btn-lg btn-block ',
                 ]
             ])
+            
         ;
     }
 
