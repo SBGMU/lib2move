@@ -58,6 +58,11 @@ class Location
      */
     private $PrixTotal;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Vehicule", inversedBy="locations")
+     */
+    private $IdVehicule;
+
     public function __construct()
     {
         $this->Vehicule = new ArrayCollection();
@@ -179,6 +184,18 @@ class Location
     public function setPrixTotal(string $PrixTotal): self
     {
         $this->PrixTotal = $PrixTotal;
+
+        return $this;
+    }
+
+    public function getIdVehicule(): ?Vehicule
+    {
+        return $this->IdVehicule;
+    }
+
+    public function setIdVehicule(?Vehicule $IdVehicule): self
+    {
+        $this->IdVehicule = $IdVehicule;
 
         return $this;
     }

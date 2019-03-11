@@ -8,6 +8,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
         <script>
+             $('.date').datepicker({ 
+                showOn: 'button', 
+                buttonImageOnly: true, 
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: 'dd-mm-yy',
+                yearRange: "-0:+1"  
+            });
             $(document).ready(function() {
                 // you may need to change this code if you are not using Bootstrap Datepicker
                 $('.js-datepicker').datepicker({
@@ -75,6 +83,8 @@
             {{ form_row(form.DateDebut) }}
             {{ form_row(form.DateFin) }}
             {{ "now"|date("m/d/Y") }}
+             {{ form_row(form.Reserver) }}
+                 {{ form_end(form) }}
             <label id="prix">{{ vehicule.prixLocation }}</label>
             <a href="/.gitignore" class="btn btn-success" download="fichier_test"> {{ vehicule.prixLocation }}</a>
                 
@@ -104,8 +114,7 @@
             <td rowspan="2">
             <button id="test" >Try it</button>
                 <a href="/.gitignore" class="btn btn-success" download="fichier_test">Télécharger le recapitulatif</a>
-                 {{ form_row(form.Reserver) }}
-                 {{ form_end(form) }}
+                
             </td>
         </tr>
         </tbody>
