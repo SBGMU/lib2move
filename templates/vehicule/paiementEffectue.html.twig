@@ -1,8 +1,8 @@
-{% include 'base.html.twig' %}
-{% include 'header.html.twig' %}
+{% extends 'base.html.twig' %}
 
+{% block body %} 
 <div class="jumbotron">
-    <h2 class="display-4">Votre paiement a été éffectué avec succès !</h2>
+    <h2 class="display-4">Votre paiement a été éffectué avec succès</h2>
 
     <table class="table">
         <thead>
@@ -20,20 +20,14 @@
         <tbody>
         <tr>
             <td scope="row">Prenom Nom</td>
-            <td>54D6F4DFD454DFC4</td>
-            <td>TOYOTA</td>
-            <td>PRIUS</td>
-            <td>12 599 €</td>
-            <td rowspan="2">
-                <a href="/.gitignore" class="btn btn-success" download="fichier_test">Télécharger le recapitulatif</a>
-            </td>
+            <td>{{ location.DateLocation|date("m/d/Y") }}</td>
+            <td>1111</td>
+            <td>11</td>
+            <td>1111111</td>
+            
         </tr>
         </tbody>
     </table>
     <p class="lead"><i>Toute l'équipe Lib2Move vous remercie d'avoir utilisé nos services.</i></p>
 </div>
-
-<style>
-    .jumbotron { width:70%; margin: 2% auto;}
-    table{ margin:5% auto ;}
-</style>
+{% endblock %}
