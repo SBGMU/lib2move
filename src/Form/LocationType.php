@@ -28,16 +28,16 @@ class LocationType extends AbstractType
                         'Marseille' => 'Marseille',
                         'Paris' => 'Paris',
                     ],])
-                        ->add('DateDebut','datetime',array(
-                            'widget' => 'single_text',
-                            'format' => 'dd-MM-yyyy',
-                            'attr' => array('class' => 'date')
-                         ))
-            ->add('DateFin','datetime',array(
-                'widget' => 'single_text',
-                'format' => 'dd-MM-yyyy',
-                'attr' => array('class' => 'date')
-             ))
+                        ->add('DateDebut', null, [
+                            'attr' => [
+                            'class' => 'Example date',
+                            ]
+                        ])
+            ->add('DateFin', null, [
+                'attr' => [
+                'class' => 'Example date',
+                ]
+            ])
             //->add('User')
             ->add('Reserver',SubmitType::class,
             array(

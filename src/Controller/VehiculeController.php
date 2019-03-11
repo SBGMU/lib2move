@@ -74,18 +74,7 @@ class VehiculeController extends Controller
         
     }
 
-    /**
-     * @Route("/paiementEffectue", name="paiementEffectue")
-     */
-
-    public function paiementEffectue(Request $request, VehiculeRepository $vehiculeRepository)
-    {
-
-        return $this->render('vehicule/paiementEffectue.html.twig', array(
-            'vehicule' => 'vehicule',
-        ));
-
-    } 
+    
     /**
      * @Route("/DetailVehicule/{id}", name="DetailVehicule")
      * @ParamConverter("vehicule", options={"mapping"={"id"="id"}})
