@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Vehicule;
 use App\Form\LoginUserType;
 use App\Form\RegisterUserType;
 use App\Repository\UserRepository;
+use App\Repository\VehiculeRepository;
+use App\Repository\LocationRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -75,4 +78,17 @@ class UserController extends Controller
             
     }
      
+    /**
+     * @Route("/", name="home")
+     */
+    public function home(Request $request, VehiculeRepository $vehiculeRepository)
+    {
+        $vehicule = new Vehicule();
+        $vehicule = $vehiculeRepository->findAll();
+        
+        return $this->render('user/Home.html.twig', array(
+             'vehicule' => $vehicule,
+         ));
+            
+    }
 }

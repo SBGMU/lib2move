@@ -24,10 +24,27 @@
             <td>1111</td>
             <td>11</td>
             <td>1111111</td>
+            <td rowspan="2">
             
+                <a href="{{ path('paiementFait', {'id': location.id}) }}" class="btn btn-success" download="fichier_test">Télécharger le recapitulatif</a>
+                
+            </td>
         </tr>
         </tbody>
     </table>
     <p class="lead"><i>Toute l'équipe Lib2Move vous remercie d'avoir utilisé nos services.</i></p>
+
+    
+
+<div class="star-ratings-css">
+  <div class="star-ratings-css-top" style="width: 84%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+  <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
 </div>
+
+<br/><br/>
+
+
+<style>
+
+
 {% endblock %}

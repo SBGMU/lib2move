@@ -87,7 +87,7 @@ class VehiculeController extends Controller
         if (!$vehicule) {
             throw $this->createNotFoundException('No video found for id '.$id);
         }
-        return $this->render('vehicule/Detail.html.twig', [
+        return $this->render('vehicule/Detaill.html.twig', [
 
             'vehicule' => $vehicule,
     
