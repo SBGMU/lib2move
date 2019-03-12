@@ -10,24 +10,25 @@
         </div>
     </div>
 
-    <fieldset>
-        {% for element in vehicule %}
-          <img src="{{ asset('uploads/' ~ element.image) }}" />
-            <h1>{{ element.marque }}</h1>
-            <h3>{{ element.modele }}</h3>
-            <p><i>Couleur </i>{{ element.couleur }}</p>
-            <input type="button" value="reserver">
-            <a href="{{ path('DetailVehicule', {'id': element.id}) }}">detail</a> 
-        {% endfor %}
-    </fieldset>
+    {% for element in vehicule %}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ asset('uploads/' ~ element.image) }}" alt="Card image cap"/>
+            <div class="card-body">
+                <h2 class="card-title">{{ element.marque }}</h2>
+                <h3 class="card-title">{{ element.modele }}</h3>
+                <p class="card-text"><i>Couleur </i>: {{ element.couleur }}</p>
+                <p class="card-text"><i>Kilometrage </i>: {{ element.nbKm }} km</p>
+                <h3 class="card-text">{{ element.prixLocation }} € / Jour</h3>
+                <input class="btn btn-primary" type="button" value="Reserver">
+                <a href="{{ path('DetailVehicule', {'id': element.id}) }}">detail</a>
+            </div>
+        </div>
+    {% endfor %}
+
+<style>
+.card { margin:6% 0% 6% 2%; display : inline-block;}
+.card-img-top {width:286px; height:185px;}
+</style>
 
     
-
-
-   
-
-
-
-
->>>>>>
 {% endblock %}
