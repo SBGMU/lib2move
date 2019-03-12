@@ -1,11 +1,5 @@
 {% extends 'base.html.twig' %}
 
-
-
-{% block title %}Vehicule{% endblock %}
-
-
-
 {% block body %}
 
     <h1 class="mb-5">Vehicule</h1>
@@ -87,27 +81,12 @@
                     </tr>
 
                     <tr>
-
-                        <th>Purchase_price</th>
-
-                        
-
-                    </tr>
-
-                    <tr>
-
-                        <th>Status</th>
-
-                       
-
-                    
-
-                </tbody>
-
+                    <th scope="row">Prix (par jour)</th>
+                    <td>{{ vehicule.prixLocation }} €</td>
+             
+                </tr>
             </table>
-
         </div>
-
     </div>
 
 
