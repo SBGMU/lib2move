@@ -6,11 +6,11 @@
 
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Accueil</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Nos Véhicules</a>
+            <a class="nav-link" href="/listeVehicule">Nos Véhicules</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
@@ -19,10 +19,20 @@
             <a class="nav-link" href="#">A propos</a>
         </li>
         </ul>
-        <a style="margin:0 35% 0 3%;" class="badge badge-pill badge-success" data-toggle="tooltip" data-placement="bottom" title="Prenom Nom">Connecté</a>
+        <a style="margin:0 32% 0 3%;" class="badge badge-pill badge-success" data-toggle="tooltip" data-placement="bottom" title="Prenom Nom">
+            {% if is_granted('ROLE_ADMIN') %}
+                {{ app.user.username }}
+            {% elseif is_granted('ROLE_USER') %}
+                {{ app.user.username }}
+            {% endif %}
+        </a>
         <button style="margin:0 1%;" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="-20 % sur la prochaine location ! A partir de 20 Libcoins">
-            LibCoins <span class="badge badge-light"> 25 </span>
+            LibCoins <span class="badge badge-light">
+            {% if is_granted('ROLE_USER') %} 
+                {{ app.user.pointFidelite }}
+            {% endif %}
+            </span>
         </button>   
-        <a href="#" class="btn btn--pill badge-danger">Se déconnecter</a>
+        <a href="/login" class="btn btn--pill badge-danger">Se déconnecter</a>
     </div>  
 </nav>

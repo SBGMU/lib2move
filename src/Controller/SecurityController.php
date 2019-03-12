@@ -27,6 +27,8 @@ class SecurityController extends Controller
         if ($form->isSubmitted() && $form->isValid()){
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
+            $user->setPointFidelite(5);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
@@ -68,5 +70,18 @@ class SecurityController extends Controller
             'user' => $user
         ]);
 
+    }
+
+     /**
+     * @Route("/userCree", name="userCree")
+     */
+
+    public function userCree(Request $request)
+    {
+        return $this->render('user/userCree.html.twig', array(
+            'userCree' => 'user',
+        ));
+
+        
     }
 }

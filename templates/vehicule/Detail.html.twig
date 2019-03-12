@@ -1,86 +1,34 @@
-{% extends 'base.html.twig' %}
+{% include 'base.html.twig' %}
+{% include 'header.html.twig' %}
 
 {% block body %}
 
-    <h1 class="mb-5">Vehicule</h1>
+<a href="/listeVehicule" id="retourListeVehicule" class="btn btn-primary">Retour liste Vehicule</a>
 
-
-
-    <div class="row">
-
-        <div class="col-3">
-
-          
-
-        </div>
-
-        <div class="col-6">
-
-            <a href="/vehicule/{{ vehicule.id }}/edit"><i class="fas fa-user-edit"></i> Edit</a>
-
+    <div class="card" style="width: 45%;">
+        <img class="card-img-top" src="{{ asset('uploads/' ~ vehicule.image) }}" alt="Photo {{ vehicule.marque }} {{ vehicule.modele }}">
+        <div class="card-body">
+            <h1 class="card-title">{{ vehicule.marque }}</h1>
+            <h2 class="card-title">{{ vehicule.modele }}</h2>
             
-
-            <table class="table table-hover mt-3">
-
-                <tbody>
-
-                    <tr>
-
-                        <th>Id</th>
-
-                        <td>{{ vehicule.id }}</td>
-
-                    </tr>
-
-                   
-                    <tr>
-
-                        <th>Serie</th>
-
-                        
-
-                    </tr>
-
-                    <tr>
-
-                        <th>Serial_number</th>
-
-                        <td>{{ vehicule.marque }}</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <th>Color</th>
-
-                        <td>{{ vehicule.modele }}</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <th>License_plate</th>
-
-                        <td>{{ vehicule.couleur }}</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <th>Kilometers</th>
-
-                        <td>{{ vehicule.immatriculation }}</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <th>Purchase_date</th>
-
-                       
-                    </tr>
-
-                    <tr>
+            <table class="table table-striped" style="font-size:1.2em;">
+                <tr>
+                    <th scope="row">Kilométrage</th>
+                    <td>{{ vehicule.nbKm }} km</td>
+                </tr>
+                <tr>
+                <th scope="col">Immatriculation</th>
+                <td>{{ vehicule.immatriculation }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Couleur</th>
+                    <td>{{ vehicule.couleur }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Disponibilité</th>
+                    <td>{{ vehicule.status }}</td>
+                </tr>
+                <tr>
                     <th scope="row">Prix (par jour)</th>
                     <td>{{ vehicule.prixLocation }} €</td>
              
@@ -89,17 +37,11 @@
         </div>
     </div>
 
-
-
-    <a href="">Back to list</a>
-
-    <a> | </a>
-
-    <a href="">Edit</a>
-
-
-
-    
+<style>
+.card { margin: 2% auto;}
+.card-img-top {margin:0 auto ;width:80%;}
+#retourListeVehicule { margin:1% 0 0 4%;}
+</style>
 
 {% endblock %}
 

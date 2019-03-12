@@ -41,7 +41,7 @@ class VehiculeType extends AbstractType
             ])
             ->add('immatriculation', null, [
                 'attr' => [
-                'placeholder' => 'Plaque d\'immatricultaion', 
+                'placeholder' => 'Immatriculation', 
                 'class' => 'form-control',
                 ]
             ])
@@ -49,10 +49,12 @@ class VehiculeType extends AbstractType
                 'attr' => [
                 'placeholder' => 'Kilométrage', 
                 'class' => 'form-control',
-                
+                'step' => '5000',
+                'min' => '0',
                 ]
             ])
             ->add('dateAchat', null, [
+                'label' => 'Date d\'Achat',
                 'attr' => [
                 'class' => 'Example date',
                 ]
@@ -61,26 +63,29 @@ class VehiculeType extends AbstractType
                 'attr' => [
                 'placeholder' => 'Prix d\'achat', 
                 'class' => 'form-control',
-                
+                'step' => '5000',
+                'min' => '0',
                 ]
             ])
             ->add('type',  ChoiceType::class, [
+                'label' => 'Type du vehicule',
                 'choices'  => [
                     'Voiture' => 'Voiture',
-                    'Moto' => 'Moto',
+                    'Scooter' => 'Scooter',
+                    'Trottinette' => 'Trottinette',
                 ],])
+
             ->add('image', FileType::class, array( 
-                'label' => 'choisir votre images',
+                'label' => 'Choisissez l\'image du vehicule',
             ))
             
-            
-                    ->add('prixLocation', null, [
-                        'attr' => [
-                        'placeholder' => 'Prix location', 
-                        'class' => 'form-control',
-                        
-                        ]
-                    ])
+            ->add('prixLocation', null, [
+                'attr' => [
+                'placeholder' => 'Prix location', 
+                'class' => 'form-control',
+                
+                ]
+            ])
             ->add('Enregistrer', SubmitType::class, [
                 'attr' => [
                 'class' => 'btn btn-success btn-lg btn-block',

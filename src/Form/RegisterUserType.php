@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -29,7 +30,14 @@ class RegisterUserType extends AbstractType
                 'class' => 'form-control',
                 ]
             ])
-            ->add('birthday')
+            ->add('birthday'
+            /*, DateType::class, [
+                'widget' => 'choice',
+                'input'  => 'datetime_immutable', 
+                'attr' => ['class' => 'js-datepicker'],
+            ]*/
+            )
+
             ->add('password', null, [
                 'attr' => [
                 'placeholder' => 'Mot de Passe', 
@@ -38,10 +46,20 @@ class RegisterUserType extends AbstractType
             ])
             ->add('password', RepeatedType:: class, array(
                 'type' => PasswordType:: class,
-                'first_options' => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
+                'first_options' => array('label' => 'Password', 
+                'attr' => [
+                    'placeholder' => 'Mot de Passe',
+                    'class' => 'form-control'
+                ],
+            ),
+                'second_options' => array('label' => 'Repeat Password', 
+                'attr' => [
+                    'placeholder' => 'Confirmer Mot de Passe',
+                    'class' => 'form-control'
+                ],
+            ),
 
-             ))
+            ))
             ->add('telephone', null, [
                 'attr' => [
                 'placeholder' => 'Telephone', 
@@ -60,7 +78,6 @@ class RegisterUserType extends AbstractType
                 'class' => 'form-control',
                 ]
             ])
-            ->add('PointFidelite')
             ->add('S\'inscrire', SubmitType::class, [
                 'attr' => [
                 'class' => 'btn btn-dark btn-lg btn-block ',
