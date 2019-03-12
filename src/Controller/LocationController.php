@@ -50,12 +50,12 @@ class LocationController extends AbstractController
                 $interval = $dat1->diff($dat2);
                 $date3 = $interval->format('%R%a');
             
-                $prix_total = $Prix_loc * $date3;
+                    $prix_total = $Prix_loc * $date3;
 
                     $location->setDateLocation(new \DateTime());
                     $location->setUser($user->getId());
                     $location->setPrixTotal($prix_total);
-$location->setIdVehicule($vehicule);
+                    $location->setIdVehicule($vehicule);
                     
                     
                     
@@ -65,7 +65,7 @@ $location->setIdVehicule($vehicule);
                 $entityManager->persist($location);
                 $entityManager->flush();
                 
-               // return $this->redirectToRoute('dashboard');
+               return $this->redirectToRoute('paiementEffectue', array('id' => $location->getId()));
             }
         
             
