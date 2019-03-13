@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\Vehicule;
+use App\Entity\Location;
 use App\Form\VehiculeType;
 use App\Repository\VehiculeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -85,7 +86,7 @@ class VehiculeController extends Controller
         $vehicule = $this->getDoctrine()->getRepository(Vehicule::class)->find($id);     
         
         if (!$vehicule) {
-            throw $this->createNotFoundException('No video found for id '.$id);
+            throw $this->createNotFoundException('No Vehicule found for id '.$id);
         }
         return $this->render('vehicule/Detaill.html.twig', [
 
