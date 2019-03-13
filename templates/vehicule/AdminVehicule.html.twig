@@ -1,0 +1,50 @@
+{% include 'base.html.twig' %}
+{% include 'header.html.twig' %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a href="{{ path('vehicule') }}">Ajouter</a>
+<table id="tableau" border="1" cellpadding="10" class="table">
+    <tbody>
+    <tr>
+        <th>Numéro de Série</th>
+        <th>Marque</th>
+        <th>Modele</th>
+        <th>Couleur</th>
+        <th>Immatriculation</th>
+        <th>Date d'achat</th>
+        <th>Prix d'achat</th>
+        <th>Kilométrage</th>
+        <th>Status</th>
+        <th>type</th>
+        <th>Prix de la location</th>
+    </tr>
+    </tbody>
+
+    {%  for element in vehicule %}
+
+    <tr>
+        <td>{{ element.numSerie }}</td>
+        <td>{{ element.marque }}</td>
+        <td>{{ element.modele }}</td>
+        <td>{{ element.couleur }}</td>
+        <td><{{ element.immatriculation }}/td>
+        <td>{{ element.dateAchat|date("m/d/Y") }}</td>
+        <td>{{ element.prixAchat }} €</td>
+        <td>{{ element.nbKm }}</td>
+        <td>{{ element.type }}</td>
+        <td>{{ element.Status }}</td>
+        <td>{{ element.prixLocation }} €</td>
+        <td><a href="{{ path('ModifVehicule', {'id':element.id}) }}">Edit</a></td>
+        <td><a href="{{ path('SuppVehicule', {'id':element.id}) }}">Supprimer</a></td>
+    </tr>
+
+{%  endfor %}
