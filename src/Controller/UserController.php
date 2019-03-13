@@ -91,4 +91,28 @@ class UserController extends Controller
          ));
             
     }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact(Request $request, VehiculeRepository $vehiculeRepository)
+    {
+        
+        return $this->render('user/Contact.html.twig', array(
+             'vehicule' => 'vehicule',
+         ));
+            
+    }
+
+    /**
+     * @Route("/galerie", name="galerie")
+     */
+    public function galerie(Request $request, VehiculeRepository $vehiculeRepository)
+    {
+        
+        return $this->render('user/Galerie.html.twig', array(
+             'vehicule' => 'vehicule',
+         ));
+            
+    }
 }
