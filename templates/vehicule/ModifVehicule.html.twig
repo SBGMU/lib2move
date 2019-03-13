@@ -1,0 +1,28 @@
+{% include 'base.html.twig' %}
+{% include 'header.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="float-left shadow-sm p-3 mb-5 bg-white rounded border border-dark statut_page">
+            <h3>Modification du Vehicule</h3>
+        </div>
+    </div>
+
+    <fieldset>
+        <div class="form-group">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </fieldset>
+
+    <style>
+        .form-group {width:500px; margin: 5% auto; }
+        .form-group input {border-radius:0px; text-transform:uppercase;}
+        .form-group label[for="vehicule_type"],.form-group label[for="vehicule_image"] {visibility:visible;}
+        .form-group ::placeholder {text-transform:capitalize;}
+        .statut_page {margin:2% 2% 2%;}
+        .form-group label {visibility:hidden;}
+        fieldset { border:3px solid lightgrey; width:40%; margin:10% auto;}
+    </style>
+{% endblock %}
