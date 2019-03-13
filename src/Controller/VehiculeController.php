@@ -48,6 +48,7 @@ class VehiculeController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($vehicule);
             $entityManager->flush();
+            return $this->redirectToRoute('AdminVehicule');
         }
 
         return $this->render('vehicule/index.html.twig', array(
@@ -113,6 +114,7 @@ class VehiculeController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($vehicule);
             $entityManager->flush();
+            return $this->redirectToRoute('AdminVehicule');
         }
 
         return $this->render('vehicule/ModifVehicule.html.twig', array(
