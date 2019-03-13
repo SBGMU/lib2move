@@ -31,11 +31,12 @@ class LocationController extends AbstractController
         $dt = new DateTime();
         //$dt->format('Y-m-d H:i:s');
         $location = new Location();
-        ///$vehicule = new Vehicule();
-        $user =  new User();
+        //$vehicule = new Vehicule();
+       // $user =  new User();
         $form = $this->createForm(LocationType:: class, $location);
         $vehicule = $this->getDoctrine()->getRepository(Vehicule::class)->find($id);  
-        
+       // $user = $this->get('security.context')->getToken()->getUser();
+
         $form->handleRequest($request);
             if (!$vehicule) {
                 throw $this->createNotFoundException('No vehicule found for id '.$id);
@@ -56,13 +57,14 @@ class LocationController extends AbstractController
                     $location->setUser($user->getId());
                     $location->setPrixTotal($prix_total);
                     $location->setIdVehicule($vehicule);
-                    
+                    $location->setUser($user);
                     
                     
 ///////vehicule
-                   // $vehicule->setStatus(1);
+                   $vehicule->setStatus(0);
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($location);
+                $entityManager->persist($vehicule);
                 $entityManager->flush();
                 
                return $this->redirectToRoute('paiementEffectue', array('id' => $location->getId()));
@@ -122,4 +124,17 @@ class LocationController extends AbstractController
         ));
 
     } 
+
+    
+    public function EmailRetard( $id)
+    {
+        
+        
+        return $this->render('vehicule/Detaill.html.twig', [
+
+            'vehicule' => $vehicule,
+    
+        ]);
+        
+    }
 }

@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Location;
 use App\Form\LoginUserType;
 use App\Form\RegisterUserType;
 use App\Repository\UserRepository;
+use App\Repository\LocationRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -45,6 +47,7 @@ class SecurityController extends Controller
             
     }
 
+    
     /**
     * @Route("/", name="login")
     */
@@ -89,10 +92,13 @@ class SecurityController extends Controller
      * @Route("/Admin/Client", name="AdminClient")
      */
 
-    public function AdminClient(Request $request)
+    public function AdminClient(Request $request, LocationRepository $locationRepository)
     {
+        $location = new Location();
+        $location = $locationRepository->findAll();
+        
         return $this->render('user/AdminClient.html.twig', array(
-            'userCree' => 'user',
+            'location' => $location,
         ));
 
         

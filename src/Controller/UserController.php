@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\Vehicule;
+use App\Entity\Location;
 use App\Form\LoginUserType;
 use App\Form\RegisterUserType;
 use App\Repository\UserRepository;
@@ -83,8 +84,10 @@ class UserController extends Controller
      */
     public function home(Request $request, VehiculeRepository $vehiculeRepository)
     {
-        $vehicule = new Vehicule();
-        $vehicule = $vehiculeRepository->findAll();
+
+        $vehicule = $vehiculeRepository->findBy(
+            [ 'Status' => 1 ]
+        );
         
         return $this->render('user/Home.html.twig', array(
              'vehicule' => $vehicule,
@@ -112,6 +115,38 @@ class UserController extends Controller
         
         return $this->render('user/Galerie.html.twig', array(
              'vehicule' => 'vehicule',
+         ));
+            
+    }
+
+     /**
+     * @Route("/CommandeClient", name="CommandeClient")
+     */
+    public function CommandeClient(Request $request, LocationRepository $locationRepository)
+    {
+        $location = $locationRepository->findBy(
+             ['id'=> $this->getUser()->getId()]
+        );
+
+       
+        
+        return $this->render('user/CommandeClient.html.twig', array(
+            'location' => $location,
+         ));
+            
+    }
+
+    /**
+     * @Route("/ListeClient", name="ListeClient")
+     */
+    public function ListeClient(Request $request, UserRepository $userRepository)
+    {
+        $user = $userRepository->findAll();
+
+        //dd($location);
+        
+        return $this->render('user/listeClient.html.twig', array(
+            'location' => $user,
          ));
             
     }

@@ -49,7 +49,6 @@ class VehiculeType extends AbstractType
                 'attr' => [
                 'placeholder' => 'Kilométrage', 
                 'class' => 'form-control',
-                'step' => '5000',
                 'min' => '0',
                 ]
             ])
@@ -63,7 +62,6 @@ class VehiculeType extends AbstractType
                 'attr' => [
                 'placeholder' => 'Prix d\'achat', 
                 'class' => 'form-control',
-                'step' => '5000',
                 'min' => '0',
                 ]
             ])
@@ -77,6 +75,7 @@ class VehiculeType extends AbstractType
 
             ->add('image', FileType::class, array( 
                 'label' => 'Choisissez l\'image du vehicule',
+                "data_class" => null
             ))
             
             ->add('prixLocation', null, [
