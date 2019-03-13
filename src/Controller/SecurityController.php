@@ -36,8 +36,6 @@ class SecurityController extends Controller
             //$this->addFlash('notice', 'Your changes were saved!');
             //$event = new UserRegisteredEvent($user);
             //$eventDispatcher->dispatch(UserRegisteredEvent::NAME,$event);
-
-           // return $this->redirectToRoute('video');
         }
         return $this->render('security/index.html.twig', [
             'controller_name' => 'SecurityController',
@@ -48,12 +46,13 @@ class SecurityController extends Controller
     }
 
     /**
-    * @Route("/login", name="login")
+    * @Route("/", name="login")
     */
     public function login(AuthenticationUtils $authenticationUtils )
     {
     $user = new User();
     $form = $this->createForm(LoginUserType:: class, $user);
+    return $this->redirectToRoute('home');
     return $this->render( 'security/login.html.twig', [
         'error' => $authenticationUtils ->getLastAuthenticationError(),
         'form' => $form->createView()

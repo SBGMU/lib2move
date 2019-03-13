@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/" style="font-family:'Century Gothic'">Lib 2 Move</a>
+    <a class="navbar-brand" href="/" style="font-family:'Century Gothic'">Lib<span class="text-primary">2</span>Move</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -7,32 +7,34 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="#">Accueil</a>
+            <a class="nav-link" href="/">Accueil</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/listeVehicule">Nos Véhicules</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="#">Mes Commandes</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">A propos</a>
+            <a class="nav-link" href="#">Contact</a>
         </li>
         </ul>
-        <a style="margin:0 32% 0 3%;" class="badge badge-pill badge-success" data-toggle="tooltip" data-placement="bottom" title="Prenom Nom">
+        <a style="margin:1% 30% 0 20% !important;background-color:green" class="badge badge-pill badge-success" data-toggle="tooltip" data-placement="bottom">
             {% if is_granted('ROLE_ADMIN') %}
                 {{ app.user.username }}
             {% elseif is_granted('ROLE_USER') %}
                 {{ app.user.username }}
             {% endif %}
         </a>
-        <button style="margin:0 1%;" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="-20 % sur la prochaine location ! A partir de 20 Libcoins">
+
+        <a style="margin:2% 3% 0% 0 !important;" class="text-white">Bonjour Prenom !</a>
+        <button style="margin:0.5% 1% 0 0;" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mes points de fidélité">
             LibCoins <span class="badge badge-light">
             {% if is_granted('ROLE_USER') %} 
                 {{ app.user.pointFidelite }}
             {% endif %}
             </span>
         </button>   
-        <a href="/login" class="btn btn--pill badge-danger">Se déconnecter</a>
+        <a href="/" class="btn btn--pill badge-danger" style="margin:0.5% 1% 0 0;">Se déconnecter</a>
     </div>  
 </nav>

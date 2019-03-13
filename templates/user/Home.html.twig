@@ -1,3 +1,5 @@
+{% include 'base.html.twig' %}
+{% include 'header.html.twig' %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,8 +23,8 @@
 
     <!-- Main style sheet -->
     <link href="css/style.css" rel="stylesheet">    
+    
 
-   
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>    
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -47,42 +49,6 @@
     <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
 
-  <!-- Start menu section -->
-  <section id="aa-menu-area">
-    <nav class="navbar navbar-default main-navbar" role="navigation">  
-      <div class="container">
-        <div class="navbar-header">
-          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- LOGO -->                                               
-          <!-- Text based logo -->
-           <a class="navbar-brand aa-logo" href="index.html"> Lib<span>2</span>Move</a>
-           <!-- Image based logo -->
-           <!-- <a class="navbar-brand aa-logo-img" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
-            <li class="active"><a href="index.html">Accueil</a></li>
-             
-            <li><a href="gallery.html">Nos Vehicules </a></li>                                         
-            
-            <li><a href="contact.html">Mes commandes</a></li>
-
-            <li><a href="contact.html">Contact</a></li>
-
-           
-          </ul>                            
-        </div><!--/.nav-collapse -->       
-      </div>          
-    </nav> 
-  </section>
-  <!-- End menu section -->
-
   <!-- Start slider  -->
   <section id="aa-slider">
     <div class="aa-slider-area"> 
@@ -91,16 +57,22 @@
         <!-- Top slider single slide -->
         <div class="aa-top-slider-single">
           <img src="img/slider/c1.jpg" alt="img">
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              Featured
+            </div>
+          </div>
+
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+            <span class="aa-top-slider-catg">A partir de </span>
+            <h2 class="aa-top-slider-title">20 € / jour</h2>
+            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>Lyon, FRANCE</p>
+            <span class="aa-top-slider-off">20% de Réduction, A partir de 20 LibCoins !</span>
           </div>
           <!-- / Top slider content -->
+
         </div>
         <!-- / Top slider single slide -->
         <!-- Top slider single slide -->
@@ -108,14 +80,13 @@
           <img src="img/slider/c4.jpg" alt="img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+            <span class="aa-top-slider-catg">A partir de </span>
+            <h2 class="aa-top-slider-title">20 € / Jour</h2>
+            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>Lyon, FRANCE</p>
+            <span class="aa-top-slider-off">20% de Réduction, A partir de 20 LibCoins !</span>
           </div>
           <!-- / Top slider content -->
+
         </div>
         <!-- / Top slider single slide -->
         <!-- Top slider single slide -->
@@ -123,14 +94,13 @@
           <img src="img/slider/c2.jpg" alt="img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+            <span class="aa-top-slider-catg">A partir</span>
+            <h2 class="aa-top-slider-title">20 € / Jour</h2>
+            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>Lyon, FRANCE</p>
+            <span class="aa-top-slider-off">20% de Réduction, A partir de 20 LibCoins !</span>
           </div>
           <!-- / Top slider content -->
+
         </div>
         <!-- / Top slider single slide -->       
          <!-- Top slider single slide -->
@@ -138,14 +108,13 @@
           <img src="img/slider/c5.jpg" alt="img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+            <span class="aa-top-slider-catg">A partir de </span>
+            <h2 class="aa-top-slider-title">20 € / Jour</h2>
+            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>Lyon, FRANCE</p>
+            <span class="aa-top-slider-off">20% de Réduction, A partir de 20 LibCoins !</span>
           </div>
           <!-- / Top slider content -->
+
         </div>
         <!-- / Top slider single slide -->        
          <!-- Top slider single slide -->
@@ -153,14 +122,13 @@
           <img src="img/slider/c7.jpg" alt="img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+            <span class="aa-top-slider-catg">A partir de </span>
+            <h2 class="aa-top-slider-title">20 € / Jour</h2>
+            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>Lyon, FRANCE</p>
+            <span class="aa-top-slider-off">20% de Réduction, A partir de 20 LibCoins !</span>
           </div>
           <!-- / Top slider content -->
+
         </div>
         <!-- / Top slider single slide -->
          <!-- Top slider single slide -->
@@ -168,14 +136,13 @@
           <img src="img/slider/c6.jpg" alt="img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">Duplex</span>
-            <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-            <span class="aa-top-slider-off">30% OFF</span>
-            <p class="aa-top-slider-price">$460,000</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+            <span class="aa-top-slider-catg">A partir de</span>
+            <h2 class="aa-top-slider-title">20 € / Jour</h2>
+            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>Lyon, FRANCE</p>
+            <span class="aa-top-slider-off">20% de Réduction, A partir de 20 LibCoins !</span>
           </div>
           <!-- / Top slider content -->
+
         </div>
         <!-- / Top slider single slide -->
       </div>
@@ -192,124 +159,67 @@
             <div class="row">
               <div class="col-md-5">
                 <div class="aa-single-advance-search">
-                  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Type Your Location">
-                  
+                  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Entrez la ville">
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="aa-single-advance-search">
-                  <select>
-                   <option value="0" selected>Category</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
-                  </select>
+                    <select>
+                        <option value="">Choisissez un type de véhicule</option>
+                        <option value="Voiture">Voiture</option>
+                        <option value="Trottinette">Trottinette</option>
+                        <option value="Scooter">Scooter</option>
+                    </select>
                 </div>
               </div>
               <div class="col-md-2">
-                 <div class="aa-single-advance-search">
-                  <select>
-                    <option value="0" selected>Type</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
-                  </select>
-              </div>
-              </div>
-              <div class="col-md-2">
-                 <div class="aa-single-advance-search">
-                  <select>
-                    <option value="0" selected>Type</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
-                  </select>
-              </div>
-              </div>
-              <div class="col-md-2">
                 <div class="aa-single-advance-search">
-                  <input class="aa-search-btn" type="submit" value="Search">
+                  <input class="aa-search-btn" type="submit" value="Rechercher">
                 </div>
               </div>
             </div>
           </div>
-         <div class="aa-advance-search-bottom">
-           <div class="row">
-            <div class="col-md-6">
-              <div id="myBtnContainer">
-                <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-                <button class="btn" onclick="myFunction()"> Voiture</button>
-                <button class="btn" onclick="filterSelection('scooter')"> scooter</button>
-                <button class="btn" onclick="filterSelection('trottinette')"> trottinette</button>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="aa-single-filter-search">
-                <span>PRICE ($)</span>
-                <span>FROM</span>
-                <span id="skip-value-lower2" class="example-val">30.00</span>
-                <span>TO</span>
-                <span id="skip-value-upper2" class="example-val">100.00</span>
-                <div id="aa-price-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-                </div>      
-              </div>
-            </div>
-          </div>  
-         </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- / Advance Search -->
 
-  <!-- About us -->
- 
-  <!-- / About us -->
-
-  <!-- Latest property -->
+  <!-- NOs vehicules -->
   <section id="aa-latest-property">
     <div class="container">
       <div class="aa-latest-property-area">
         <div class="aa-title">
-          <h2>Latest Properties</h2>
+          <h2>Nos Vehicules</h2>
           <span></span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>         
+          <p>Voici la liste des véhicules proposés par toute l'équipe Lib2Move</p>         
         </div>
+
+
         <div class="aa-latest-properties-content">
           <div class="row" id="myUL">
           {% for element in vehicule %}
             <div class="col-md-4 {{ element.type }}" id="{{ element.type }}">
-        
+            
               <article class="aa-properties-item">
                 <a href="#" class="aa-properties-item-img">
                    <img src="{{ asset('uploads/' ~ element.image) }}" />
                 </a>
-                <div class="aa-tag for-sale">
-                  For Sale
-                </div>
                 <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
                   <div class="aa-properties-about">
                     <h3><a href="#">{{ element.marque }}</a></h3>
-                   <p>{{ element.modele }}</p>
-                    </div>
+                    <p>{{ element.modele }}</p>
+                  </div>
                   <div class="aa-properties-detial">
                     <span class="aa-price">
                      <p><i>Couleur </i>{{ element.couleur }}</p>
+                     <p><i>Kilometrage </i>{{ element.nbKm }} km</p>
                     </span>
-                    <a href="{{ path('DetailVehicule', {'id': element.id}) }}" class="aa-secondary-btn">View Details</a>
+                    <div class="aa-properties-detial">
+                      <a href="{{ path('DetailVehicule', {'id': element.id}) }}" class="aa-secondary-btn">Details</a>
+                    </div>
                   </div>
                 </div>
               </article>
-         
             </div>
           {% endfor %}
             
@@ -320,16 +230,16 @@
   </section>
   <!-- / Latest property -->
 
-  <!-- Service section -->
+  <!-- Nos Services -->
   <section id="aa-service">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="aa-service-area">
             <div class="aa-title">
-              <h2>Our Service</h2>
+              <h2>Nos Services</h2>
               <span></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+              <p>Découvrez tout les services proposés par Lib2Move</p>
             </div>
             <!-- service content -->
             <div class="aa-service-content">
@@ -340,8 +250,7 @@
                       <span class="fa fa-home"></span>
                     </div>
                     <div class="aa-single-service-content">
-                      <h4><a href="#">Property Sale</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                      <h4>Des locaux de proximité</h4>
                     </div>
                   </div>
                 </div>
@@ -351,8 +260,7 @@
                       <span class="fa fa-check"></span>
                     </div>
                     <div class="aa-single-service-content">
-                      <h4><a href="#">Property Rent</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                      <h4>Des Services de qualité</h4>
                     </div>
                   </div>
                 </div>
@@ -362,8 +270,7 @@
                       <span class="fa fa-crosshairs"></span>
                     </div>
                     <div class="aa-single-service-content">
-                      <h4><a href="#">Property Development</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                      <h4>Des produits ciblés</h4>
                     </div>
                   </div>
                 </div>
@@ -373,8 +280,7 @@
                       <span class="fa fa-bar-chart-o"></span>
                     </div>
                     <div class="aa-single-service-content">
-                      <h4><a href="#">Market Analysis</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                      <h4>Des experts à vos services</h4>
                     </div>
                   </div>
                 </div>
@@ -385,7 +291,7 @@
       </div>
     </div>
   </section>
-  <!-- / Service section -->
+  <!-- / Nos Services -->
 
  
 
@@ -398,24 +304,16 @@
           <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="aa-footer-left">
-               <p>Designed by <a rel="nofollow" href="http://www.markups.io/">MarkUps.io</a></p>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="aa-footer-middle">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
+               <p>Designed by <a rel="nofollow" href="http://www.markups.io/">Lib2Move</a></p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
               <div class="aa-footer-right">
-                <a href="#">Home</a>
+                <a href="/">Accueil</a>
                 <a href="#">Support</a>
                 <a href="#">License</a>
                 <a href="#">FAQ</a>
-                <a href="#">Privacy & Term</a>
+                <a href="#">Terme & Confidentialité</a>
               </div>
             </div>            
           </div>
