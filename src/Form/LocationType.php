@@ -29,18 +29,19 @@ class LocationType extends AbstractType
                         'Paris' => 'Paris',
                     ],])
                         ->add('DateDebut', DateTimeType::class, [
-                            'attr' => [
-                            'class' => 'DateDebut',
+                            'widget' => 'single_text',
+                    'required' => false,
+                    'html5' => false,
+                    'attr' => [
+                    'class' => 'DateDebut',
                             ]
                         ])
             ->add('DateFin', DateTimeType::class, [
-                'widget' => 'single_text',
-
+                    'widget' => 'single_text',
                     'required' => false,
-
                     'html5' => false,
-                'attr' => [
-                'class' => 'DateFin',
+                    'attr' => [
+                    'class' => 'DateFin',
 
                 ]
             ])

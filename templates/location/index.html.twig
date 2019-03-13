@@ -20,6 +20,14 @@
                 autoclose: true,
                     format: 'yyyy-mm-dd hh:ii:ss'
                      });
+
+                     $('.DateDebut').datetimepicker({
+                language: 'fr',
+                defaultDate: new Date(),
+                startDate: new Date(),
+                autoclose: true,
+                    format: 'yyyy-mm-dd hh:ii:ss'
+                     });
                 });
                 $('.date').datepicker({ 
                 showOn: 'button', 
@@ -95,7 +103,7 @@
             {{ form_row(form.VilleDepart) }}
             {{ form_row(form.DateDebut) }}
             {{ form_row(form.DateFin) }}
-            {{ "now"|date("m/d/Y") }}
+        
              {{ form_row(form.Reserver) }}
                  {{ form_end(form) }}
             <label id="prix">{{ vehicule.prixLocation }}</label>

@@ -84,4 +84,18 @@ class SecurityController extends Controller
 
         
     }
+
+
+    /**
+     * @Route("/Admin/Client", name="AdminClient")
+     */
+
+    public function AdminClient(Request $request)
+    {
+        return $this->render('user/AdminClient.html.twig', array(
+            'userCree' => 'user',
+        ));
+
+        
+    }
 }
