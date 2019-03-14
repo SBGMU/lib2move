@@ -80,7 +80,7 @@ class UserController extends Controller
     }
      
     /**
-     * @Route("/home", name="home")
+     * @Route("/", name="home")
      */
     public function home(Request $request, VehiculeRepository $vehiculeRepository)
     {

@@ -1,3 +1,5 @@
+{% include 'base.html.twig' %}
+{% include 'header.html.twig' %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,20 +62,7 @@
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="aa-header-left">
-                  <div class="aa-telephone-no">
-                    <span class="fa fa-phone"></span>
-                    1-900-523-3564
-                  </div>
-                  <div class="aa-email hidden-xs">
-                    <span class="fa fa-envelope-o"></span> info@markups.com
-                  </div>
                 </div>              
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="aa-header-right">
-                  <a href="/register" class="aa-register">Register</a>
-                  <a href="/login" class="aa-login">Login</a>
-                </div>
               </div>
             </div>
           </div>
@@ -86,65 +75,6 @@
   <!-- Start menu section -->
   <section id="aa-menu-area">
 </script>
-<style>
-table.blueTable {
-  border: 1px solid #1C6EA4;
-  background-color: #EEEEEE;
-  width: 100%;
-  text-align: left;
-  border-collapse: collapse;
-}
-table.blueTable td, table.blueTable th {
-  border: 1px solid #AAAAAA;
-  padding: 3px 2px;
-}
-table.blueTable tbody td {
-  font-size: 13px;
-}
-table.blueTable tr:nth-child(even) {
-  background: #D0E4F5;
-}
-table.blueTable thead {
-  background: #1C6EA4;
-  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  border-bottom: 2px solid #444444;
-}
-table.blueTable thead th {
-  font-size: 15px;
-  font-weight: bold;
-  color: #FFFFFF;
-  border-left: 2px solid #D0E4F5;
-}
-table.blueTable thead th:first-child {
-  border-left: none;
-}
-
-table.blueTable tfoot {
-  font-size: 14px;
-  font-weight: bold;
-  color: #FFFFFF;
-  background: #D0E4F5;
-  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
-  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
-  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
-  border-top: 2px solid #444444;
-}
-table.blueTable tfoot td {
-  font-size: 14px;
-}
-table.blueTable tfoot .links {
-  text-align: right;
-}
-table.blueTable tfoot .links a{
-  display: inline-block;
-  background: #1C6EA4;
-  color: #FFFFFF;
-  padding: 2px 8px;
-  border-radius: 5px;
-}
-</style>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -159,18 +89,17 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<input id="myInput" type="text" placeholder="Search..">
-<table class="blueTable">
+<table class="table table-dark" class="blueTable">
 <thead>
 <tr>
+<th>Numero de Location</th>
 <th>Nom</th>
-<th>Marque</th>
-<th>VilleDepart</th>
-<th>VilleDarriver</th>
-<th>DateDebut</th>
-<th>DateFin</th>
-<th>DateLocation</th>
-<th>facture</th>
+<th>Ville de départ</th>
+<th>Ville d'arrivee</th>
+<th>Date de Debut</th>
+<th>Date de Fin</th>
+<th>Date de location</th>
+<th>Facture</th>
 </tr>
 </thead>
 <tfoot>
@@ -184,8 +113,8 @@ $(document).ready(function(){
 {% for element in location %}
 
 <tr>
-<td>{{ element.user.nom }}</td> 
-<td>{{ element.IdVehicule.id }}</td>
+<td>{{ element.IdVehicule.id }}</td> 
+<td>{{ element.user.nom }}</td>
 <td>{{ element.VilleDepart }}</td>
 <td>{{ element.VilleDarriver }}</td>
 <td>{{ element.DateDebut|date("m/d/Y") }}</td>
@@ -198,43 +127,6 @@ $(document).ready(function(){
 </table>
 </section>
 
-
-  <!-- Footer -->
-  <footer id="aa-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-        <div class="aa-footer-area">
-          <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="aa-footer-left">
-               <p>Designed by <a rel="nofollow" href="http://www.markups.io/">MarkUps.io</a></p>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="aa-footer-middle">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12">
-              <div class="aa-footer-right">
-                <a href="#">Home</a>
-                <a href="#">Support</a>
-                <a href="#">License</a>
-                <a href="#">FAQ</a>
-                <a href="#">Privacy & Term</a>
-              </div>
-            </div>            
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </footer>
-  <!-- / Footer -->
 
   <!-- jQuery library -->
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
