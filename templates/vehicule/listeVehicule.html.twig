@@ -20,7 +20,7 @@
                 <p class="card-text"><i>Kilometrage </i>: {{ element.nbKm }} km</p>
                 <h3 class="card-text">{{ element.prixLocation }} € / Jour</h3>
                 <input class="btn btn-primary" type="button" value="Reserver">
-                <a href="{{ path('DetailVehicule', {'id': element.id}) }}">detail</a>
+                <a href="{{ path('SuppUser', {'id': element.id}) }}">detail</a>
             </div>
         </div>
     {% endfor %}

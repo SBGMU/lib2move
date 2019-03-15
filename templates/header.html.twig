@@ -26,15 +26,15 @@
                 {{ app.user.username }}
             {% endif %}
         </a>
-
-        <a style="margin:2% 3% 0% 0 !important;" class="text-white">Bonjour Prenom !</a>
+        {% if is_granted('ROLE_USER') %} 
+        
         <button style="margin:0.5% 1% 0 0;" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mes points de fidélité">
             LibCoins <span class="badge badge-light">
-            {% if is_granted('ROLE_USER') %} 
+            
                 {{ app.user.pointFidelite }}
             {% endif %}
             </span>
         </button>   
-        <a href="/" class="btn btn--pill badge-danger" style="margin:0.5% 1% 0 0;">Se déconnecter</a>
+        <a href="/logout" class="btn btn--pill badge-danger" style="margin:0.5% 1% 0 0;">Se déconnecter</a>
     </div>  
 </nav>

@@ -80,13 +80,13 @@ $(document).ready(function(){
 <thead>
 <tr>
 <th>Nom</th>
-<th>Marque</th>
-<th>VilleDepart</th>
-<th>VilleDarriver</th>
-<th>DateDebut</th>
-<th>DateFin</th>
-<th>DateLocation</th>
-<th>facture</th>
+<th>prenom</th>
+<th>Telephone</th>
+<th>email</th>
+<th>PointFidelite</th>
+<th></th>
+<th></th>
+
 </tr>
 </thead>
 <tfoot>
@@ -101,13 +101,13 @@ $(document).ready(function(){
 
 <tr>
 <td>{{ element.nom }}</td> 
-<td>{{ element.id }}</td>
-<td>{222</td>
-<td>333</td>
-<td>444</td>
-<td>55}</td>
-<td>55</td>
-<td><A href="{{ path('paiementFait', {'id': element.id}) }}">Facture</A></td>
+<td>{{ element.prenom }}</td>
+<td>{{ element.Telephone }}</td>
+<td>{{ element.email }}</td>
+<td>{{ element.PointFidelite }}</td>
+<td><A href="">Alert</A></td>
+<td><A href="">supprimer</A></td>
+
 </tr>
 {% endfor %}
 </tbody>

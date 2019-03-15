@@ -126,15 +126,5 @@ class LocationController extends AbstractController
     } 
 
     
-    public function EmailRetard( $id)
-    {
-        
-        
-        return $this->render('vehicule/Detaill.html.twig', [
-
-            'vehicule' => $vehicule,
     
-        ]);
-        
-    }
 }

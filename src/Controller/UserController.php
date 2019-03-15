@@ -150,4 +150,21 @@ class UserController extends Controller
          ));
             
     }
+
+    public function EmailRetard( $id)
+    {
+        /*$message = (new \Swift_Message('You Got Mail!'))
+                         ->setFrom($contactFormData['from'])
+                          ->setTo('our.own.real@email.address')
+                         ->setBody(
+                              $contactFormData['message'],
+                              'text/plain'
+                       )
+                   ;
+            
+                      $mailer->send($message);
+       
+        */
+    }
+    
 }
