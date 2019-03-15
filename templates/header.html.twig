@@ -5,20 +5,38 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarColor02">
+        {% if is_granted('ROLE_ADMIN') %}
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="/">Accueil</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/listeVehicule">Nos Véhicules</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Mes Commandes</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/listeVehicule">Nos Véhicules</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Mes Commandes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
         </ul>
+        {% else %}
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/AdminVehicule">Liste Vehicule</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/ListeClient">Liste Client</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+        {% endif %}
+
         <a style="margin:1% 30% 0 20% !important;background-color:green" class="badge badge-pill badge-success" data-toggle="tooltip" data-placement="bottom">
             {% if is_granted('ROLE_ADMIN') %}
                 {{ app.user.username }}

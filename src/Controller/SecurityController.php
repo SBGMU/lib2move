@@ -60,8 +60,9 @@ class SecurityController extends Controller
         'error' => $authenticationUtils ->getLastAuthenticationError(),
         'form' => $form->createView()
         ]);
-        return $this->redirectToRoute('home');
+        //return $this->redirectToRoute('home');
     }
+    
     /**
      * @Route("/admin", name="admin")
      */
@@ -99,7 +100,7 @@ class SecurityController extends Controller
         return $this->render('user/AdminClient.html.twig', array(
             'location' => $location,
         ));
-
         
     }
+
 }

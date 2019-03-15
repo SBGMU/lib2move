@@ -19,7 +19,7 @@
                 <p class="card-text"><i>Couleur </i>: {{ element.couleur }}</p>
                 <p class="card-text"><i>Kilometrage </i>: {{ element.nbKm }} km</p>
                 <h3 class="card-text">{{ element.prixLocation }} € / Jour</h3>
-                <input class="btn btn-primary" type="button" value="Reserver">
+                <a href="{{ path('location', {'id': element.id}) }} class="btn btn-primary" type="button" value="Reserver">reserver</a>
                 <a href="{{ path('DetailVehicule', {'id': element.id}) }}">detail</a>
             </div>
         </div>
