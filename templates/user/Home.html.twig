@@ -58,12 +58,6 @@
         <div class="aa-top-slider-single">
           <img src="img/slider/c1.jpg" alt="img">
 
-          <div class="card" style="width: 18rem;">
-            <div class="card-header">
-              Featured
-            </div>
-          </div>
-
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
             <span class="aa-top-slider-catg">A partir de </span>
@@ -216,6 +210,7 @@
                      <p><i>Kilometrage </i>{{ element.nbKm }} km</p>
                     </span>
                     <div class="aa-properties-detial">
+                      <a href="{{ path('location', {'id': element.id}) }}" class="aa-secondary-btn">Reserver</a>
                       <a href="{{ path('DetailVehicule', {'id': element.id}) }}" class="aa-secondary-btn">Details</a>
                     </div>
                   </div>

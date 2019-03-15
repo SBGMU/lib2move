@@ -95,7 +95,6 @@ class VehiculeController extends Controller
             'vehicule' => $vehicule,
     
         ]);
-        
     }
     /**
      * @Route("/ModifVehicule/{id}", name="ModifVehicule")

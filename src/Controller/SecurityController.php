@@ -49,18 +49,18 @@ class SecurityController extends Controller
 
     
     /**
-    * @Route("/", name="login")
+    * @Route("/login", name="login")
     */
     public function login(AuthenticationUtils $authenticationUtils )
     {
-    $user = new User();
-    $form = $this->createForm(LoginUserType:: class, $user);
-    
-    return $this->render( 'security/login.html.twig', [
-        'error' => $authenticationUtils ->getLastAuthenticationError(),
-        'form' => $form->createView()
-        ]);
-    return $this->redirectToRoute('home');
+        $user = new User();
+        $form = $this->createForm(LoginUserType:: class, $user);
+        
+        return $this->render( 'security/login.html.twig', [
+            'error' => $authenticationUtils ->getLastAuthenticationError(),
+            'form' => $form->createView()
+            ]);
+        return $this->redirectToRoute('home');
     }
     /**
      * @Route("/admin", name="admin")

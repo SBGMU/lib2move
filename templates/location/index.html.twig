@@ -93,6 +93,7 @@
     
     {% endblock %}
 <div class="jumbotron">
+<<<<<<< HEAD
 
 
     <div class="card" style="width: 45%;">
@@ -152,11 +153,61 @@
     
     <p class="lead"><i>Toute l'équipe Lib2Move vous remercie d'avoir utilisé nos services.</i></p>
 </div>
+=======
+{{ form_start(form) }}
+    <h4 class="display-4">Details de votre location</h4>
+    <div class="card" style="width: 40%;">
+            <img class="card-img-top" src="{{ asset('uploads/' ~ vehicule.image) }}" alt="Photo {{ vehicule.marque }} {{ vehicule.modele }}">
+            <div class="card-body">
+                <h1 class="card-title">{{ vehicule.marque }}</h1>
+                <h2 class="card-title">{{ vehicule.modele }}</h2>
+                
+                <table class="table table-striped" style="font-size:1.2em;">
+                    <tr>
+                        <th scope="row">Kilométrage</th>
+                        <td>{{ vehicule.nbKm }} km</td>
+                    </tr>
+                    <tr>
+                    <th scope="col">Immatriculation</th>
+                    <td>{{ vehicule.immatriculation }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Couleur</th>
+                        <td>{{ vehicule.couleur }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Disponibilité</th>
+                        <td>{{ vehicule.status }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Prix (par jour)</th>
+                        <td>{{ vehicule.prixLocation }} €</td>
+                
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+    <div class="container">
+        {{ form_row(form.VilleDarriver) }}
+        {{ form_row(form.VilleDepart) }}
+        {{ form_row(form.DateDebut) }}
+        {{ form_row(form.DateFin) }}</br
+
+        {{ form_row(form.Reserver) }}
+        {{ form_end(form) }}
+    </div>
+
+    
+>>>>>>> 07a5517a142beddadfa8d647b4af9dd1b454a334
 
 <style>
+    .card { margin: 2% auto;}
+    .card-img-top {margin:0 auto ;width:80%;}
     .jumbotron { width:70%; margin: 2% auto;}
     table{ margin:5% auto ;}
+    label[for="location_DateDebut"]{ display:none;}
+    label[for="location_DateFin"] { display:none; margin-bottom:4%;}
+
 </style>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
 

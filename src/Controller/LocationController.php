@@ -54,11 +54,11 @@ class LocationController extends AbstractController
                     $prix_total = $Prix_loc * $date3;
 
                     $location->setDateLocation(new \DateTime());
-                    $location->setUser($user->getId());
                     $location->setPrixTotal($prix_total);
                     $location->setIdVehicule($vehicule);
+                    $user = $this->get('security.token_storage')->getToken()->getUser();
                     $location->setUser($user);
-                    
+
                     
 ///////vehicule
                    $vehicule->setStatus(0);
