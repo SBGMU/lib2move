@@ -1,80 +1,104 @@
 {% include 'base.html.twig' %}
-{% include 'headerAdmin.html.twig' %}
+{% include 'header.html.twig' %}
 
-<!DOCTYPE html>
-<html lang="en">
-  
-</script>
+*<!DOCTYPE html>
+<html lang="en"></script>
 <style>
 table.blueTable {
-  border: 1px solid #1C6EA4;
-  background-color: #EEEEEE;
-  width: 100%;
-  text-align: left;
-  border-collapse: collapse;
+ border: 1px solid #1C6EA4
+;
+ background-color: #EEEEEE
+;
+ width: 100%;
+ text-align: left;
+ border-collapse: collapse;
 }
 table.blueTable td, table.blueTable th {
-  border: 1px solid #AAAAAA;
-  padding: 3px 2px;
+ border: 1px solid #AAAAAA
+;
+ padding: 3px 2px;
 }
 table.blueTable tbody td {
-  font-size: 13px;
+ font-size: 13px;
 }
 table.blueTable tr:nth-child(even) {
-  background: #D0E4F5;
+ background: #D0E4F5
+;
 }
 table.blueTable thead {
-  background: #1C6EA4;
-  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  border-bottom: 2px solid #444444;
+ background: #1C6EA4
+;
+ background: -moz-linear-gradient(top, #5592bb
+0%, #327cad
+66%, #1C6EA4
+100%);
+ background: -webkit-linear-gradient(top, #5592bb
+0%, #327cad
+66%, #1C6EA4
+100%);
+ background: linear-gradient(to bottom, #5592bb
+0%, #327cad
+66%, #1C6EA4
+100%);
+ border-bottom: 2px solid #444444
+;
 }
 table.blueTable thead th {
-  font-size: 15px;
-  font-weight: bold;
-  color: #FFFFFF;
-  border-left: 2px solid #D0E4F5;
+ font-size: 15px;
+ font-weight: bold;
+ color: #FFFFFF
+;
+ border-left: 2px solid #D0E4F5
+;
 }
 table.blueTable thead th:first-child {
-  border-left: none;
-}
-
-table.blueTable tfoot {
-  font-size: 14px;
-  font-weight: bold;
-  color: #FFFFFF;
-  background: #D0E4F5;
-  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
-  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
-  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
-  border-top: 2px solid #444444;
+ border-left: none;
+}table.blueTable tfoot {
+ font-size: 14px;
+ font-weight: bold;
+ color: #FFFFFF
+;
+ background: #D0E4F5
+;
+ background: -moz-linear-gradient(top, #dcebf7
+0%, #d4e6f6
+66%, #D0E4F5
+100%);
+ background: -webkit-linear-gradient(top, #dcebf7
+0%, #d4e6f6
+66%, #D0E4F5
+100%);
+ background: linear-gradient(to bottom, #dcebf7
+0%, #d4e6f6
+66%, #D0E4F5
+100%);
+ border-top: 2px solid #444444
+;
 }
 table.blueTable tfoot td {
-  font-size: 14px;
+ font-size: 14px;
 }
 table.blueTable tfoot .links {
-  text-align: right;
+ text-align: right;
 }
 table.blueTable tfoot .links a{
-  display: inline-block;
-  background: #1C6EA4;
-  color: #FFFFFF;
-  padding: 2px 8px;
-  border-radius: 5px;
+ display: inline-block;
+ background: #1C6EA4
+;
+ color: #FFFFFF
+;
+ padding: 2px 8px;
+ border-radius: 5px;
 }
-</style>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</style><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
+ $("#myInput").on("keyup", function() {
+   var value = $(this).val().toLowerCase();
+   $("#myTable tr").filter(function() {
+     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+   });
+ });
 });
 </script>
 </head>
@@ -82,14 +106,12 @@ $(document).ready(function(){
 <thead>
 <tr>
 <th>Nom</th>
-<th>Marque</th>
-<th>Ville de depart</th>
-<th>Ville d'arrivée</th>
-<th>Date de debut</th>
-<th>Date de fin</th>
-<th>Date de location</th>
-<th>Facture</th>
-</tr>
+<th>prenom</th>
+<th>Telephone</th>
+<th>email</th>
+<th>PointFidelite</th>
+<th></th>
+<th></th></tr>
 </thead>
 <tfoot>
 <tr>
@@ -99,19 +121,15 @@ $(document).ready(function(){
 </tr>
 </tfoot>
 <tbody>
-{% for element in location %}
-
-<tr>
-<td>{{ element.nom }}</td> 
-<td>{{ element.id }}</td>
-<td>{</td>
-<td>333</td>
-<td>444</td>
-<td>55}</td>
-<td>55</td>
-<td><A href="{{ path('paiementFait', {'id': element.id}) }}">Facture</A></td>
-</tr>
+{% for element in location %}<tr>
+<td>{{ element.nom }}</td>
+<td>{{ element.prenom }}</td>
+<td>{{ element.Telephone }}</td>
+<td>{{ element.email }}</td>
+<td>{{ element.PointFidelite }}</td>
+<td><A href="">Alert</A></td>
+<td><A href="">supprimer</A></td></tr>
 {% endfor %}
 </tbody>
 </table>
-
+Zone de message

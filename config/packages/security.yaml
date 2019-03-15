@@ -20,7 +20,7 @@ security:
             username_parameter: "login_user[email]"
             password_parameter: "login_user[password]"
         logout:
-            path: /logout
+            path: app_logout
             target: /
 
             # activate different ways to authenticate

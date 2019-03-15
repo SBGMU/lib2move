@@ -34,8 +34,6 @@ class SecurityController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-            return $this->redirectToRoute('login');
-
             //$logger->info('User registered now !');
             //$this->addFlash('notice', 'Your changes were saved!');
             //$event = new UserRegisteredEvent($user);
@@ -46,6 +44,7 @@ class SecurityController extends Controller
             'error' => $authenticationUtils ->getLastAuthenticationError(),
             'form' => $form->createView()
         ]);
+            
     }
 
     
@@ -85,6 +84,8 @@ class SecurityController extends Controller
         return $this->render('user/userCree.html.twig', array(
             'userCree' => 'user',
         ));
+
+        
     }
 
 

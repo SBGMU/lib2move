@@ -192,10 +192,11 @@
         <div class="aa-latest-properties-content">
           <div class="row" id="myUL">
           {% for element in vehicule %}
+                    
             <div class="col-md-4 {{ element.type }}" id="{{ element.type }}">
             
               <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
+                <a href="{{ path('location', {'id': element.id}) }}" class="aa-properties-item-img">
                    <img src="{{ asset('uploads/' ~ element.image) }}" />
                 </a>
                 <div class="aa-properties-item-content">

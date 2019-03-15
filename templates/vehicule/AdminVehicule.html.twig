@@ -32,19 +32,21 @@
 
 
     {%  for element in vehicule %}
-        <tr>
-            <td>{{ element.numSerie }}</td>
-            <td>{{ element.marque }}</td>
-            <td>{{ element.modele }}</td>
-            <td>{{ element.couleur }}</td>
-            <td>{{ element.immatriculation }}</td>
-            <td>{{ element.dateAchat|date("m/d/Y") }}</td>
-            <td>{{ element.prixAchat }} €</td>
-            <td>{{ element.nbKm }} km</td>
-            <td>{{ element.type }}</td>
-            <td>{{ element.Status }}</td>
-            <td>{{ element.prixLocation }} €</td>
-            <td><a href="{{ path('ModifVehicule', {'id':element.id}) }}">Edit</a></td>
-            <td><a href="{{ path('SuppVehicule', {'id':element.id}) }}">Supprimer</a></td>
-        </tr>
-    {%  endfor %}
+
+    <tr>
+        <td>{{ element.numSerie }}</td>
+        <td>{{ element.marque }}</td>
+        <td>{{ element.modele }}</td>
+        <td>{{ element.couleur }}</td>
+        <td>{{ element.immatriculation }}</td>
+        <td>{{ element.dateAchat|date("m/d/Y") }}</td>
+        <td>{{ element.prixAchat }} €</td>
+        <td>{{ element.nbKm }}</td>
+        <td>{{ element.type }}</td>
+        <td>{{ element.Status }}</td>
+        <td>{{ element.prixLocation }} €</td>
+        <td><a href="{{ path('ModifVehicule', {'id':element.id}) }}">Edit</a></td>
+        <td><a href="{{ path('SuppVehicule', {'id':element.id}) }}">Supprimer</a></td>
+    </tr>
+
+{%  endfor %}

@@ -44,6 +44,10 @@
                 {{ app.user.username }}
             {% endif %}
         </a>
+<<<<<<< HEAD
+        {% if is_granted('ROLE_USER') %} 
+        
+=======
 
         <a style="margin:2% 3% 0% 0 !important;" class="text-white">
             Bonjour 
@@ -51,13 +55,18 @@
                 {{ app.user.Prenom }}
             {% endif %} !
         </a>
+>>>>>>> 07a5517a142beddadfa8d647b4af9dd1b454a334
         <button style="margin:0.5% 1% 0 0;" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mes points de fidélité">
             LibCoins <span class="badge badge-light">
-            {% if is_granted('ROLE_USER') %} 
+            
                 {{ app.user.pointFidelite }}
             {% endif %}
             </span>
         </button>   
+<<<<<<< HEAD
+        <a href="/logout" class="btn btn--pill badge-danger" style="margin:0.5% 1% 0 0;">Se déconnecter</a>
+=======
         <a href="/login" class="btn btn--pill badge-danger" style="margin:0.5% 1% 0 0;">Se déconnecter</a>
+>>>>>>> 07a5517a142beddadfa8d647b4af9dd1b454a334
     </div>  
 </nav>
